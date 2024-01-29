@@ -22,7 +22,7 @@ app.use(cors({ origin: "https://demo-ecommerce-frontend.unaizk.com", credentials
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static('backend/public'));
+app.use(express.static(path.join(__dirname, '/backend/public')));
 
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
