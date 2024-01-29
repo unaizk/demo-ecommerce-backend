@@ -6,18 +6,23 @@ import connectDB from './config/db.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors'
 import adminRoutes from './routes/adminRoutes.js'
+import path,{dirname,join} from 'path'
 dotenv.config();
+import { fileURLToPath } from 'url';
 
 connectDB()
 const port = process.env.PORT || 5000;
 
 const app = express();
 
+
+
+
 app.use(cors({ origin: "https://demo-ecommerce-frontend.unaizk.com", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
-app.use(express.static(__dirname+'backend/public'));
+app.use(express.static('backend/public'));
 
 app.use('/api/users',userRoutes)
 app.use('/api/admin',adminRoutes)
