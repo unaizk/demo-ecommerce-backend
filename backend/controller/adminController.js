@@ -84,6 +84,9 @@ const addProduct = asyncHandler(async (req, res) => {
     
     
     const productImage = req.file ? req.file.filename : null;
+
+    console.log(req.body);
+    console.log(productImage,'rrrrrr');
     
     // Create a new Product instance
     const newProduct = new Product({
