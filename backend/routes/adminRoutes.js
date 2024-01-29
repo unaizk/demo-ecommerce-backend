@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 // Multer setup
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '/backend/public/productImage'));
+        cb(null, path.join(__dirname, '../public/productImage'));
     },
     filename: (req, file, cb) => {
         cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
